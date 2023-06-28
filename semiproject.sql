@@ -2,6 +2,7 @@
 create table member(
     mno     int auto_increment,
     userid  varchar(18) unique,
+    passwd varchar(18) not null,
     name    varchar(10) not null,
     email   varchar(50) not null,
     regdate datetime default current_timestamp,

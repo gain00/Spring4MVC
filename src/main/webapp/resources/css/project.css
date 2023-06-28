@@ -1,7 +1,6 @@
 /* 페이지 공통 */
 #container {
     width: 960px;
-    border: 1px solid red;
     margin: 0 auto;
 }
 nav { margin-top: 50px}
@@ -16,3 +15,14 @@ a:active{ color:orange;  }
 .hr { color: black; height: 2px; opacity: 100%}
 main{min-height: 500px}
 .copy { text-align: center}
+
+/*폼 공통*/
+form { width: 620px; margin: 100px auto; border: 1px solid red; }
+form div { padding: 5px}
+form label{ width: 110px; font-weight: bold; text-align: right}
+form input { padding: 5px}
+
+/*회원정보*/
+.myinfo { width: 300px; margin: 0 auto;}
+ .myinfo td, .myinfo th {padding: 7px}
+ .myinfo th { text-align: right}
