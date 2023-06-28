@@ -20,7 +20,8 @@ public class IndexController {
         m.addAttribute("sayHello","Hello world from Controller");
         logger.info("Hello,world!! from Logger!");
 
-        return "index";
+        //return "index"; //jsp biew resolver
+        return "index.tiles";
     }
 
 }
