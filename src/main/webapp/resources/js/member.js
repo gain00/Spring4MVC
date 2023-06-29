@@ -20,8 +20,8 @@ joinbtn?.addEventListener('click',() => {
 let loginbtn = document.querySelector("#loginbtn");
 loginbtn?.addEventListener('click',() =>{
     let frm = document.forms.loginfrm;
-    if(frm.userid.value === '') alert();
-    else if(frm.passwd.value === '') alert();
+    if(frm.userid.value === '') alert('아이디가비었습니다');
+    else if(frm.passwd.value === '') alert('비밀번호가 비었습니다');
     else {
         frm.method = 'post';
         frm.action = '/member/login';
