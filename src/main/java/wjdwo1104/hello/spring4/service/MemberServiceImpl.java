@@ -9,13 +9,21 @@ import wjdwo1104.hello.spring4.model.Member;
 public class MemberServiceImpl implements MemberService {
 
     @Autowired
-    private MemberDAO mado;
+    private MemberDAO mdao;
     @Override
     public boolean saveMember(Member m) {
         boolean isSaved = false;
-        if (mado.insertMember(m)>0) isSaved = true;
+        if (mdao.insertMember(m)>0) isSaved = true;
 
         return isSaved;
 
+    }
+
+    @Override
+    public boolean loginMember(Member m) {
+        boolean isLogin = false;
+        if(mdao.loginMember(m) != null)
+            isLogin = true;
+        return isLogin;
     }
 }
