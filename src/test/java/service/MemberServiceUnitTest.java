@@ -40,4 +40,16 @@ public class MemberServiceUnitTest {
         assertEquals(msrv.loginMember(m), true);
 
     }
+
+    @Test
+    //Transactional 데이터에 실제값은 안들어감
+    public void readOneMember() throws Exception {
+         String userid = "abc123";
+
+        //assertEquals(테스트메서드, 검증값)
+        assertNotNull(msrv.readOneMember(userid));
+
+    }
+
+
 }
