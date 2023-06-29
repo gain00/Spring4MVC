@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import wjdwo1104.hello.spring4.model.Member;
 import wjdwo1104.hello.spring4.service.MemberService;
 
+import javax.servlet.http.HttpSession;
+
 
 @Controller
 public class MemberController {
@@ -50,21 +52,22 @@ public class MemberController {
         return "member/login.tiles";
     }
     @RequestMapping(value = "/member/login", method = RequestMethod.POST)
-    public String loginok(Member m){
+    public String loginok(Member m, HttpSession sess){
         String viewName = "redirect:/member/loginfail";
 
         logger.info("member/loginok 호출");
-        if(msrv.loginMember(m))
+        if(msrv.loginMember(m)){
+            sess.setAttribute("member",m);//세션변수
             viewName = "redirect:/member/myinfo";
-
+        }
         return viewName;
     }
     @RequestMapping("/member/myinfo")
-    public String myinfo(Model m){
-
-
+    public String myinfo(Model m, HttpSession sess){
         logger.info("member/myinfo 호출");
-
+        String userid =
+                ((Member) sess.getAttribute("member")).getUserid();
+        m.addAttribute("member",msrv.readOneMember(userid));
 
         return "member/myinfo.tiles";
     }
