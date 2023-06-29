@@ -6,10 +6,10 @@
     <h2>회원정보</h2>
     <table class
 
-        <tr><th>아이디</th><td>hong</td></tr>
-        <tr><th>이름</th><td>홍길동</td></tr>
-        <tr><th>이메일</th><td>wjdwo1104#naver.com</td></tr>
-        <tr><th>가입일</th><td>2023-06-08 12:12:!2</td></tr>
+        <tr><th>아이디</th><td>${member.userid}</td></tr>
+        <tr><th>이름</th><td>${member.name}</td></tr>
+        <tr><th>이메일</th><td>${member.email}</td></tr>
+        <tr><th>가입일</th><td>${member.regdate}</td></tr>
 
     </table>
 </main>
