@@ -3,14 +3,17 @@ package dao;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 import wjdwo1104.hello.spring4.dao.MemberDAO;
+import wjdwo1104.hello.spring4.dao.MemberDAOImpl;
 import wjdwo1104.hello.spring4.model.Member;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({"classpath:spring/servlet-context.xml","classpath:spring/root-context.xml"})
@@ -26,5 +29,16 @@ public class MemberDaoUnitTest {
         Member m = new Member(null,"abc123a","987xyz","abc123","abc123@987xyz",null);
         //assertEquals(테스트메서드, 검증값)
         assertEquals(mdao.insertMember(m),1);
+    }
+
+    @Test
+    public void loginMember() throws Exception {
+        Member m = new Member();
+        m.setUserid("abc123");
+        m.setPasswd("987xyz");
+
+
+        //System.out.println(mdao.loginMember(m));
+        assertNotNull(mdao.loginMember(m));
     }
 }
