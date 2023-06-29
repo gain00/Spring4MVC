@@ -17,7 +17,7 @@ main{min-height: 500px}
 .copy { text-align: center}
 
 /*폼 공통*/
-form { width: 620px; margin: 100px auto; border: 1px solid red; }
+form { width: 620px; margin: 100px auto; }
 form div { padding: 5px}
 form label{ width: 110px; font-weight: bold; text-align: right}
 form input { padding: 5px}

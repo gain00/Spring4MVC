@@ -3,8 +3,8 @@
 
 <main>
 
-    <h2> 회원가입</h2>
-    <form name="joinfrm">
+    <h2> 로그인</h2>
+    <form name="loginfrm">
         <div><label for="userid">아이디</label>
             <input type="text" name="userid" id="userid"></div>
 
