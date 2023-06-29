@@ -53,6 +53,15 @@ public class MemberControllerUnitTest {
                 .andExpect(redirectedUrl("/member/login"));
 
     }
+    @Test
+    public void loginokTest() throws Exception {
+
+        mockMvc.perform(post("/member/login")
+                        .param("userid","abc123")
+                        .param("passwd","987xyz"))
+                .andExpect(redirectedUrl("/member/myinfo"));
+
+    }
 
 
 
