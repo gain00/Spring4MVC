@@ -7,7 +7,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.transaction.annotation.Transactional;
-import wjdwo1104.hello.spring4.dao.MemberDAO;
 import wjdwo1104.hello.spring4.model.Member;
 import wjdwo1104.hello.spring4.service.MemberService;
 
@@ -44,7 +43,7 @@ public class MemberServiceUnitTest {
     @Test
     //Transactional 데이터에 실제값은 안들어감
     public void readOneMember() throws Exception {
-         String userid = "abc123";
+        String userid = "abc123";
 
         //assertEquals(테스트메서드, 검증값)
         assertNotNull(msrv.readOneMember(userid));
