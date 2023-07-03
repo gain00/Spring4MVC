@@ -9,5 +9,7 @@ public interface BoardDAO {
 
     Board selectOneBoard(String bno);
 
+    int insertBoard(Board bd);//데이터가 실제로 들어갔는지 볼려고 int
+
 
 }
