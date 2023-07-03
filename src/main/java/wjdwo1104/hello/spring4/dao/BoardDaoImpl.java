@@ -28,7 +28,7 @@ public class BoardDaoImpl implements BoardDAO{
     }
 
     @Override
-    public Board selecOneBoard(String bno) {
+    public Board selectOneBoard(String bno) {
         Object[] params = new Object[] {bno};
         RowMapper<Board> mapper = new SelectOneMapper();
         return jdbcTemplate.queryForObject(selectOneSQL,params,mapper);

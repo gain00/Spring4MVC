@@ -43,7 +43,7 @@
         <c:forEach items="${boards}" var="bd">
             <tr>
                 <td>${bd.bno}</td>
-                <td><a href="/board/view?bno="> ${bd.title}</a></td>
+                <td><a href="/board/view?bno=${bd.bno}"> ${bd.title}</a></td>
                 <td>${bd.userid}</td>
                 <td>${fn:substring(bd.regdate,0,10)}</td>
                 <td>${bd.views}</td>
