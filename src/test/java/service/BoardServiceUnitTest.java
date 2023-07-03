@@ -37,5 +37,15 @@ public class BoardServiceUnitTest {
         System.out.println(results);
     }
 
+    @Test
+    //Transactional 데이터에 실제값은 안들어감
+    public void readOneBoard() throws Exception {
+        String bno = "450";
+        Board result = bsrv.readOneBoard(bno);
+
+        assertNotNull(result);
+        System.out.println(result);
+    }
+
 
 }
