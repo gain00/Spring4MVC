@@ -7,7 +7,7 @@ public class MemberServiceAdvice {
 
 //    @Pointcut("execution(* wjdwo1104)
 //
-//
+//ㅇ
 //
 //    @Around("myInfoPoin()")
 //    public Object myinfoAOPProcess(ProceedingJoinPoint pjp) throws Throwable{
