@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import wjdwo1104.hello.spring4.model.Board;
 import wjdwo1104.hello.spring4.service.BoardService;
 
 
@@ -23,6 +24,10 @@ public class BoardController {
         logger.info("/board/list호출");
 
         m.addAttribute("boards",bsrv.readBoard(cpg));
+//        m.addAttribute("psnum",cpg); // 페이지네이션 시작번호1 11 21
+//        m.addAttribute("allpg",cpg); //총페이지
+
+
 
         //return "index"; //jsp biew resolver
         return "board/list.tiles";
@@ -38,12 +43,16 @@ public class BoardController {
     }
 
     @GetMapping("/view")
-    public String view(Model m){
+    public String view(Model m, String bno){
+        logger.info("/board/view호출");
+        Board board = bsrv.readOneBoard(bno);
 
-        logger.info("/board/list호출");
+        m.addAttribute("board", board);
 
         //return "index"; //jsp biew resolver
         return "board/view.tiles";
     }
+
+
 
 }
