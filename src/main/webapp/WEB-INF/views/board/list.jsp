@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <main>
 
@@ -25,29 +26,29 @@
             </td>
             <%--<td></td>--%>
             <td colspan="3" class="btnrgt">
-            <%--<td></td>--%>
-            <%--<td></td>--%>
-            <button type="button" id="newbtn"
-                    class ="btn btn-success">새글쓰기</button></td>
+                <%--<td></td>--%>
+                <%--<td></td>--%>
+                <button type="button" id="newbtn"
+                        class ="btn btn-success">새글쓰기</button></td>
         </tr>
-            <tr>
-                <th>번호</th>
-                <th>제목</th>
-                <th>작성자</th>
-                <th>작성일</th>
-                <th>조회</th>
-            </tr>
-
-     <%--for(board bd:boards)--%>
-    <c:forEach items="${boards}" var="bd">
         <tr>
-            <td>${bd.bno}</td>
-            <td><a href="/board/view?bno="> ${bd.title}</a></td>
-            <td>${bd.userid}</td>
-            <td>${bd.regdate}</td>
-            <td>${bd.views}</td>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>작성일</th>
+            <th>조회</th>
         </tr>
-    </c:forEach>
+
+        <%--for(board bd:boards)--%>
+        <c:forEach items="${boards}" var="bd">
+            <tr>
+                <td>${bd.bno}</td>
+                <td><a href="/board/view?bno="> ${bd.title}</a></td>
+                <td>${bd.userid}</td>
+                <td>${fn:substring(bd.regdate,0,10)}</td>
+                <td>${bd.views}</td>
+            </tr>
+        </c:forEach>
         </tbody>
     </table>
     <ul class="pagenation">
@@ -58,18 +59,18 @@
 
         </c:if>
 
-    <%-- for(int i=0; i<10; i++) --%>
+        <%-- for(int i=0; i<10; i++) --%>
         <c:forEach var="i" begin="1" end="10">
             <c:if test="${param.cpg ne i}">
                 <li><a href="?cpg=${i}">${i}</a></li>
             </c:if>
             <c:if test="${param.cpg eq i}">
-            <li class="cpage">
-                <a href="?cpg=${i}">${i}</a></li>
-            </li>
+                <li class="cpage">
+                    <a href="?cpg=${i}">${i}</a></li>
+                </li>
             </c:if>
         </c:forEach>
-        <c:if test="${param.cpg+1 eq }">
+        <c:if test="${param.cpg+1>0}">
 
             <li><a href="?cpg=${param.cpg+1}">다음</a> </li>
 
