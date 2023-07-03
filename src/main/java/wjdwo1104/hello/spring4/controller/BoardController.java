@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import wjdwo1104.hello.spring4.model.Board;
 import wjdwo1104.hello.spring4.service.BoardService;
@@ -36,10 +37,20 @@ public class BoardController {
     @GetMapping("/write")
     public String write(Model m){
 
-        logger.info("/board/list호출");
+
 
         //return "index"; //jsp biew resolver
         return "board/write.tiles";
+    }
+
+    @PostMapping("/write")
+    public String writeok(Board bd){
+        String returnPage ="redirect:/board/fail";
+
+        if(bsrv.saveBoard(bd))
+            returnPage = "redirect:/board/list?cpg=1";
+
+        return returnPage;
     }
 
     @GetMapping("/view")
@@ -52,6 +63,8 @@ public class BoardController {
         //return "index"; //jsp biew resolver
         return "board/view.tiles";
     }
+
+
 
 
 
