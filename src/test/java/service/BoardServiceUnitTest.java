@@ -48,4 +48,15 @@ public class BoardServiceUnitTest {
     }
 
 
+    @Test
+    @Transactional// 데이터에 실제값은 안들어감
+    public void SaveBoard() throws Exception {
+        Board bd = new Board(null,"테스트","abc123",null,null,"그라라라라");
+
+        assertEquals(bsrv.saveBoard(bd), true);
+
+    }
+
+
+
 }
