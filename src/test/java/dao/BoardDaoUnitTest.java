@@ -42,6 +42,14 @@ public class BoardDaoUnitTest {
         assertNotNull(result);
         System.out.println(result);
     }
+    @Test
+    @Transactional
+    public void insertBoard() throws Exception {
+        Board bd = new Board(null,"테스트","abc123",null,null,"그라라라라");
 
+
+        assertEquals(bdao.insertBoard(bd),1);
+
+    }
 
 }
