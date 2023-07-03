@@ -8,4 +8,9 @@ public interface BoardService {
 
     List<Board> readBoard(int cpg);
 
+
+   Board readOneBoard(String bno);//string int의차이는 산수식에 사용하는지 안하는지
+
+
+
 }
