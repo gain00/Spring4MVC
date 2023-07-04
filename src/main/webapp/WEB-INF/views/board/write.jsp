@@ -1,9 +1,9 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<c:if test="${empty sessionScope.member}">
+<%--<c:if test="${empty sessionScope.member}">
   <script>location.href = "/member/login";</script>
-</c:if>
+</c:if>--%>
 
 
 <main>
@@ -15,8 +15,8 @@
         <input type="text" name="title" id="title"></div>
       <div><label for="userid">작성자</label>
         <input type="text" name="userid" id="userid" value="${sessionScope.member.userid}" readonly></div>
-      <div><label for="contents" class="drgup">본문</label>
-        <textarea rows="7" cols="55" name="contents" id="contents"></textarea></div>
+      <div><label fr="contents" class="drgup">본문</label>
+          <textarea rows="7" cools="55" name="contents" id="contents"></textarea></div>
 
     <div><label>자동쓰기방지</label>
       <div class="g-recaptcha cptaalgn" data-sitekey="6LfQW-EmAAAAALtuVkVcePzJKcCtALsRwII-Aj1G"></div>
